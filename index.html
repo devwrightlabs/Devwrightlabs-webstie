@@ -3,119 +3,328 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevWright Labs | 3D Innovation Studio</title>
+    <meta
+      name="description"
+      content="DevWright Labs — premium engineering studio for Pi Network apps, Web3 cross-chain interoperability, and FinTech solutions for private and government sectors."
+    />
+    <title>DevWright Labs | Pi Network · Web3 · FinTech</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="top-nav">
-      <a class="brand" href="#home">DevWright Labs</a>
-      <nav class="menu" aria-label="Primary Navigation">
+    <!-- ============================================================
+         FIXED 3D BACKGROUND LAYER
+         Three.js renders a glowing cross-chain network here.
+         The handshake silhouette overlay sits above it as a soft shadow.
+         ============================================================ -->
+    <div class="bg-layer" aria-hidden="true">
+      <canvas id="bgCanvas"></canvas>
+      <div class="bg-handshake"></div>
+      <div class="bg-veil"></div>
+    </div>
+
+    <!-- ============================================================
+         STICKY HEADER + DROPDOWN
+         Dropdown jumps instantly to anchors, bypassing scroll pacing.
+         ============================================================ -->
+    <header class="site-header" data-parallax-header>
+      <a class="brand" href="#home">
+        <span class="brand-mark"></span>
+        <span class="brand-text">DevWright<span>Labs</span></span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
         <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#portfolio">Work</a>
         <a href="#testimonials">Testimonials</a>
-        <a href="contact.html">Contact</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <label class="quick-nav" for="quickNav">Quick Navigate</label>
-      <select id="quickNav" aria-label="Quick navigation dropdown">
-        <option value="#home">Go to...</option>
-        <option value="#about">About</option>
-        <option value="#portfolio">Portfolio</option>
-        <option value="#testimonials">Testimonials</option>
-        <option value="contact.html">Contact Page</option>
-        <option value="projects/cross-chain-hub.html">Cross-Chain Hub</option>
-        <option value="projects/defi-orbit.html">DeFi Orbit</option>
-        <option value="projects/studio-grid.html">Studio Grid</option>
-      </select>
+
+      <div class="quick-jump">
+        <label for="jumpMenu" class="sr-only">Quick navigate</label>
+        <select id="jumpMenu" aria-label="Quick navigate to section">
+          <option value="">Jump to…</option>
+          <option value="#home">Home</option>
+          <option value="#about">About Us</option>
+          <option value="#portfolio">Portfolio</option>
+          <option value="#testimonials">Testimonials</option>
+          <option value="#contact">Contact</option>
+        </select>
+      </div>
     </header>
 
     <main>
-      <section id="home" class="hero section">
-        <canvas id="networkCanvas" aria-hidden="true"></canvas>
-        <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow">3D Product Engineering</p>
-          <h1>Building immersive cross-chain digital experiences.</h1>
-          <p>
-            DevWright Labs combines 3D visualization, blockchain engineering, and product strategy to launch
-            high-impact platforms.
-          </p>
-          <a class="btn" href="#portfolio">Explore Portfolio</a>
+      <!-- ===================== HERO ===================== -->
+      <section id="home" class="section hero">
+        <div class="hero-inner">
+          <div class="hero-copy" data-parallax="0.25">
+            <p class="eyebrow">Pi Network · Web3 · FinTech</p>
+            <h1 class="hero-title">
+              Engineering the<br />
+              <span class="accent">cross-chain</span> future of finance.
+            </h1>
+            <p class="hero-lede">
+              DevWright Labs builds premium Pi Network applications, interoperable Web3 infrastructure, and
+              regulated FinTech platforms for private enterprises and government agencies.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#portfolio">See Our Work</a>
+              <a class="btn btn-ghost" href="#contact">Start a Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-hint" aria-hidden="true">
+          <span></span>Scroll
         </div>
       </section>
 
-      <section id="about" class="section">
-        <h2>About DevWright Labs</h2>
-        <p>
-          We are a multidisciplinary innovation studio focused on cross-chain infrastructure, digital product
-          design, and motion-rich experiences. Our team has delivered enterprise blockchain architectures,
-          high-conversion product launches, and immersive 3D web interfaces.
-        </p>
+      <!-- ===================== ABOUT ===================== -->
+      <section id="about" class="section about">
+        <header class="section-head" data-parallax="0.15">
+          <p class="kicker">About DevWright Labs</p>
+          <h2>A multidisciplinary studio for the interoperable economy.</h2>
+        </header>
+
+        <div class="about-grid">
+          <article class="pillar">
+            <div class="pillar-icon" data-icon="pi"></div>
+            <h3>Pi Network Apps</h3>
+            <p>
+              Production-grade applications for the Pi ecosystem — KYC-aware utilities, marketplaces, and
+              Pioneer-first experiences built against the Pi SDK and Mainnet.
+            </p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon" data-icon="web3"></div>
+            <h3>Web3 Cross-Chain</h3>
+            <p>
+              Interoperability layers, bridges, and routing intelligence that unify EVM, Cosmos, Solana, and
+              emerging L1s into one composable surface for users and institutions.
+            </p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon" data-icon="fintech"></div>
+            <h3>FinTech &amp; GovTech</h3>
+            <p>
+              Compliant payment rails, tokenization platforms, and digital-identity infrastructure delivered
+              to private-sector challengers and government modernization programs.
+            </p>
+          </article>
+        </div>
+
         <div class="stats">
-          <article>
-            <h3>40+</h3>
-            <p>Cross-chain deployments</p>
-          </article>
-          <article>
-            <h3>12</h3>
-            <p>Industry awards and recognitions</p>
-          </article>
-          <article>
-            <h3>99.9%</h3>
-            <p>Service reliability across client environments</p>
-          </article>
+          <div><strong>40+</strong><span>Cross-chain deployments</span></div>
+          <div><strong>12</strong><span>Gov &amp; enterprise clients</span></div>
+          <div><strong>99.9%</strong><span>Platform reliability</span></div>
+          <div><strong>8</strong><span>Pi Network releases</span></div>
         </div>
       </section>
 
-      <section id="portfolio" class="section">
-        <h2>Portfolio</h2>
-        <p>Discover selected projects with dedicated detail pages, videos, and image galleries.</p>
+      <!-- ===================== PORTFOLIO ===================== -->
+      <section id="portfolio" class="section portfolio">
+        <header class="section-head" data-parallax="0.15">
+          <p class="kicker">Selected Work</p>
+          <h2>Eight platforms shaping cross-chain &amp; FinTech.</h2>
+          <p class="section-sub">
+            Each card opens a dedicated project page with full-resolution video and an image gallery. Drop
+            your media into <code>projects/&lt;slug&gt;.html</code> using the marked placeholders.
+          </p>
+        </header>
+
         <div class="portfolio-grid">
-          <article class="card">
-            <h3>Cross-Chain Hub</h3>
-            <p>Interoperable network gateway and real-time analytics visualization.</p>
-            <a href="projects/cross-chain-hub.html">View Project</a>
-          </article>
-          <article class="card">
-            <h3>DeFi Orbit</h3>
-            <p>3D liquidity navigation experience for modern decentralized finance onboarding.</p>
-            <a href="projects/defi-orbit.html">View Project</a>
-          </article>
-          <article class="card">
-            <h3>Studio Grid</h3>
-            <p>Interactive command center for media-rich product operations.</p>
-            <a href="projects/studio-grid.html">View Project</a>
-          </article>
+          <!-- 1 -->
+          <a class="project-card" href="projects/pi-pay.html">
+            <div class="card-media" data-thumb="pi-pay">
+              <span class="card-tag">Pi Network</span>
+            </div>
+            <div class="card-body">
+              <h3>Pi Pay Gateway</h3>
+              <p>Pioneer-first checkout SDK for Pi mainnet merchants.</p>
+              <span class="card-link">View project →</span>
+            </div>
+          </a>
+          <!-- 2 -->
+          <a class="project-card" href="projects/cross-chain-hub.html">
+            <div class="card-media" data-thumb="cross-chain-hub">
+              <span class="card-tag">Web3</span>
+            </div>
+            <div class="card-body">
+              <h3>Cross-Chain Hub</h3>
+              <p>Unified routing across EVM, Cosmos, and Solana liquidity.</p>
+              <span class="card-link">View project →</span>
+            </div>
+          </a>
+          <!-- 3 -->
+          <a class="project-card" href="projects/defi-orbit.html">
+            <div class="card-media" data-thumb="defi-orbit">
+              <span class="card-tag">DeFi</span>
+            </div>
+            <div class="card-body">
+              <h3>DeFi Orbit</h3>
+              <p>3D liquidity navigator for institutional onboarding.</p>
+              <span class="card-link">View project →</span>
+            </div>
+          </a>
+          <!-- 4 -->
+          <a class="project-card" href="projects/sovereign-id.html">
+            <div class="card-media" data-thumb="sovereign-id">
+              <span class="card-tag">GovTech</span>
+            </div>
+            <div class="card-body">
+              <h3>Sovereign ID</h3>
+              <p>Government-grade digital identity on a permissioned chain.</p>
+              <span class="card-link">View project →</span>
+            </div>
+          </a>
+          <!-- 5 -->
+          <a class="project-card" href="projects/treasury-link.html">
+            <div class="card-media" data-thumb="treasury-link">
+              <span class="card-tag">FinTech</span>
+            </div>
+            <div class="card-body">
+              <h3>Treasury Link</h3>
+              <p>Real-time cross-border settlement for corporate treasuries.</p>
+              <span class="card-link">View project →</span>
+            </div>
+          </a>
+          <!-- 6 -->
+          <a class="project-card" href="projects/bridge-sentinel.html">
+            <div class="card-media" data-thumb="bridge-sentinel">
+              <span class="card-tag">Security</span>
+            </div>
+            <div class="card-body">
+              <h3>Bridge Sentinel</h3>
+              <p>ML-driven anomaly detection for cross-chain bridges.</p>
+              <span class="card-link">View project →</span>
+            </div>
+          </a>
+          <!-- 7 -->
+          <a class="project-card" href="projects/civic-ledger.html">
+            <div class="card-media" data-thumb="civic-ledger">
+              <span class="card-tag">Public Sector</span>
+            </div>
+            <div class="card-body">
+              <h3>Civic Ledger</h3>
+              <p>Transparent procurement records for municipal agencies.</p>
+              <span class="card-link">View project →</span>
+            </div>
+          </a>
+          <!-- 8 -->
+          <a class="project-card" href="projects/studio-grid.html">
+            <div class="card-media" data-thumb="studio-grid">
+              <span class="card-tag">Product</span>
+            </div>
+            <div class="card-body">
+              <h3>Studio Grid</h3>
+              <p>Operations command center for media-rich product teams.</p>
+              <span class="card-link">View project →</span>
+            </div>
+          </a>
         </div>
       </section>
 
-      <section id="testimonials" class="section">
-        <h2>Testimonials</h2>
-        <div class="testimonials">
-          <blockquote>
-            “DevWright Labs transformed our platform into a premium cross-chain experience. The 3D interface
-            significantly boosted user engagement.”
-            <cite>— CTO, Quantum Ledger Systems</cite>
-          </blockquote>
-          <blockquote>
-            “Strategic, fast, and deeply technical. Their delivery quality and communication set a new standard
-            for our product teams.”
-            <cite>— VP Product, Aether Finance</cite>
-          </blockquote>
+      <!-- ===================== TESTIMONIALS ===================== -->
+      <section id="testimonials" class="section testimonials">
+        <header class="section-head" data-parallax="0.15">
+          <p class="kicker">What partners say</p>
+          <h2>Trusted by founders, banks, and ministries.</h2>
+        </header>
+
+        <div class="carousel" data-carousel>
+          <button class="carousel-btn prev" type="button" data-carousel-prev aria-label="Previous testimonial">‹</button>
+          <ul class="carousel-track" data-carousel-track>
+            <li class="quote-card">
+              <blockquote>
+                “DevWright Labs delivered our Pi Network rollout in record time. Their team blends product
+                taste with serious blockchain depth.”
+              </blockquote>
+              <cite>— Head of Product, Pioneer Marketplace</cite>
+            </li>
+            <li class="quote-card">
+              <blockquote>
+                “The cross-chain routing layer they built is now core to our institutional desk. Reliability
+                has been flawless.”
+              </blockquote>
+              <cite>— CTO, Aether Finance</cite>
+            </li>
+            <li class="quote-card">
+              <blockquote>
+                “A rare partner that understands both regulator expectations and engineering excellence. Our
+                ministry roadmap accelerated.”
+              </blockquote>
+              <cite>— Director of Digital Services, Ministry of Finance</cite>
+            </li>
+            <li class="quote-card">
+              <blockquote>
+                “Their 3D product visualizations made our investor story land. Series B closed two weeks
+                later.”
+              </blockquote>
+              <cite>— Founder, Quantum Ledger Systems</cite>
+            </li>
+          </ul>
+          <button class="carousel-btn next" type="button" data-carousel-next aria-label="Next testimonial">›</button>
+          <div class="carousel-dots" data-carousel-dots aria-hidden="true"></div>
         </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section id="contact" class="section contact">
+        <header class="section-head" data-parallax="0.15">
+          <p class="kicker">Contact</p>
+          <h2>Tell us about your platform.</h2>
+          <p class="section-sub">
+            We respond within one business day. For deeper briefs, attach materials on the dedicated
+            <a href="contact.html">contact page</a>.
+          </p>
+        </header>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cName">Name</label>
+            <input id="cName" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input id="cEmail" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="cCompany">Company / Agency</label>
+            <input id="cCompany" name="company" type="text" autocomplete="organization" />
+          </div>
+          <div class="field field-wide">
+            <label for="cMessage">Message</label>
+            <textarea id="cMessage" name="message" rows="5" required></textarea>
+          </div>
+          <div class="field field-wide form-actions">
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </div>
+        </form>
       </section>
     </main>
 
-    <footer class="footer">
-      <p>© 2026 DevWright Labs. Engineered for tomorrow.</p>
-      <a href="contact.html">Contact Us</a>
+    <footer class="site-footer">
+      <p>© <span id="year"></span> DevWright Labs · Engineered for the interoperable economy.</p>
+      <nav aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#portfolio">Work</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </footer>
 
+    <!-- ============================================================
+         DEPENDENCIES (CDN — no build step required)
+         · three            — 3D background scene
+         · gsap + ScrollTrigger — scroll-driven scrub + parallax
+         ============================================================ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

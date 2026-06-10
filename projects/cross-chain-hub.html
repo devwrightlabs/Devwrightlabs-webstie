@@ -3,29 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cross-Chain Hub | DevWright Labs</title>
+    <title>Cross-Chain Hub · DevWright Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="project-page">
-    <header class="top-nav">
-      <a class="brand" href="../index.html#home">DevWright Labs</a>
-      <nav class="menu" aria-label="Primary Navigation">
-        <a href="../index.html#portfolio">Portfolio</a>
+    <div class="bg-layer" aria-hidden="true">
+      <div class="bg-handshake"></div>
+      <div class="bg-veil"></div>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html#home">
+        <span class="brand-mark"></span>
+        <span class="brand-text">DevWright<span>Labs</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#portfolio">Work</a>
+        <a href="../index.html#testimonials">Testimonials</a>
         <a href="../contact.html">Contact</a>
       </nav>
     </header>
+
     <main class="content-shell">
+      <a class="breadcrumb" href="../index.html#portfolio">← Back to portfolio</a>
+      <p class="kicker">Web3</p>
       <h1>Cross-Chain Hub</h1>
-      <p>
-        A secure network intelligence layer connecting multiple blockchains through a unified operational
-        interface.
-      </p>
-      <section class="media-grid">
-        <video controls preload="metadata">
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-        </video>
-        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1200&q=80" alt="Cross-chain dashboard render" />
-      </section>
+      <p class="section-sub">A unified routing layer that aggregates liquidity and messaging across EVM chains, Cosmos, and Solana with a single composable interface.</p>
+
+      <h2 style="margin-top:2.5rem;font-size:1.2rem;">Highlights</h2>
+      <ul>
+        <li>Intent-based routing with best-price execution.</li>
+        <li>Real-time analytics for institutional desks.</li>
+        <li>Hardened audits and on-chain monitoring.</li>
+      </ul>
+
+      <!-- =============================================================
+           MEDIA GALLERY — drop in real assets here.
+           Replace each .placeholder-media with <video> / <img> tags.
+           Example:
+             <video controls preload="metadata" poster="media/cross-chain-hub-poster.jpg">
+               <source src="media/cross-chain-hub-hero.mp4" type="video/mp4" />
+             </video>
+           ============================================================= -->
+      <h2 style="margin-top:2.5rem;font-size:1.2rem;">Gallery</h2>
+      <div class="media-grid">
+        <figure>
+          <div class="placeholder-media">Hero Video · drop cross-chain-hub-hero.mp4</div>
+          <figcaption>Project hero reel</figcaption>
+        </figure>
+        <figure>
+          <div class="placeholder-media">Image · drop cross-chain-hub-shot-01.jpg</div>
+          <figcaption>Product overview</figcaption>
+        </figure>
+        <figure>
+          <div class="placeholder-media">Image · drop cross-chain-hub-shot-02.jpg</div>
+          <figcaption>Workflow detail</figcaption>
+        </figure>
+        <figure>
+          <div class="placeholder-media">Image · drop cross-chain-hub-shot-03.jpg</div>
+          <figcaption>Outcome metrics</figcaption>
+        </figure>
+      </div>
+
+      <div class="hero-cta" style="margin-top:2.5rem;">
+        <a class="btn btn-primary" href="../contact.html">Discuss a similar project</a>
+        <a class="btn btn-ghost" href="../index.html#portfolio">More work</a>
+      </div>
     </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> DevWright Labs</p>
+      <nav aria-label="Footer">
+        <a href="../index.html#about">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </footer>
+
+    <script src="../script.js"></script>
   </body>
 </html>
