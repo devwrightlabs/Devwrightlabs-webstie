@@ -148,7 +148,9 @@
     rafId = requestAnimationFrame(animate);
     if (!renderer || !scene || !camera) return;
 
-    // Ease toward target scroll progress to smooth the scrubbing
+    // Smooth-damp toward the latest target scroll progress. A small factor
+    // (0.08) yields a soft, low-pass-filtered response so the 3D scene never
+    // jitters when the scroll wheel fires bursts of events.
     scrollProgress += (targetProgress - scrollProgress) * 0.08;
 
     const time = t * 0.0005;
@@ -187,7 +189,8 @@
     const gsap = window.gsap;
     if (hasST) gsap.registerPlugin(window.ScrollTrigger);
 
-    // 40% slower scrub → standard ~1s scrub becomes 1.4s
+    // 40% slower scrub: a standard ~1.0s scrub becomes 1.0 * 1.4 = 1.4s,
+    // making the scroll-driven animations feel deliberate, not rushed.
     const SCRUB = 1.4;
 
     if (hasST) {

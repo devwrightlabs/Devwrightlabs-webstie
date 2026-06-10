@@ -318,13 +318,14 @@
     </footer>
 
     <!-- ============================================================
-         DEPENDENCIES (CDN — no build step required)
-         · three            — 3D background scene
-         · gsap + ScrollTrigger — scroll-driven scrub + parallax
+         DEPENDENCIES (vendored locally — no build step, no CDN)
+         · three r160                 — 3D background scene
+         · gsap 3.12.5 + ScrollTrigger — scroll-driven scrub + parallax
+         See vendor/*.LICENSE for attribution.
          ============================================================ -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="vendor/three.min.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -40,22 +40,31 @@ Pages, Netlify, Cloudflare Pages, or any static host with no toolchain.
 ├── styles.css              # Full design system (green & white)
 ├── script.js               # Three.js scene + GSAP ScrollTrigger + carousel + form
 ├── README.md
-└── projects/               # 8 portfolio sub-pages — drop your media here
-    ├── pi-pay.html
-    ├── cross-chain-hub.html
-    ├── defi-orbit.html
-    ├── sovereign-id.html
-    ├── treasury-link.html
-    ├── bridge-sentinel.html
-    ├── civic-ledger.html
-    └── studio-grid.html
+├── projects/               # 8 portfolio sub-pages — drop your media here
+│   ├── pi-pay.html
+│   ├── cross-chain-hub.html
+│   ├── defi-orbit.html
+│   ├── sovereign-id.html
+│   ├── treasury-link.html
+│   ├── bridge-sentinel.html
+│   ├── civic-ledger.html
+│   └── studio-grid.html
+└── vendor/                 # Locally vendored libraries (no CDN at runtime)
+    ├── three.min.js        # three r160
+    ├── gsap.min.js         # gsap 3.12.5
+    ├── ScrollTrigger.min.js
+    ├── three.LICENSE
+    └── gsap.LICENSE
 ```
 
 ---
 
 ## 📦 Dependencies
 
-All dependencies are loaded from CDN — **no `npm install` step required**.
+All dependencies are **vendored locally under `vendor/`** so there is no build
+step, no `npm install`, and no third-party CDN at runtime — good for
+Subresource Integrity, offline preview, and air-gapped enterprise / government
+environments.
 
 | Package          | Version | Purpose                                           |
 | ---------------- | ------- | ------------------------------------------------- |
