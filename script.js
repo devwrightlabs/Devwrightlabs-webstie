@@ -35,10 +35,12 @@ if (canvas) {
     canvas.height = canvas.offsetHeight;
   };
 
+  resize();
+
   for (let i = 0; i < pointCount; i += 1) {
     points.push({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * 420,
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height * 0.7,
       z: Math.random() * 1,
       speedX: (Math.random() - 0.5) * 0.7,
       speedY: (Math.random() - 0.5) * 0.5,
@@ -89,7 +91,6 @@ if (canvas) {
     requestAnimationFrame(draw);
   };
 
-  resize();
   draw();
   window.addEventListener("resize", resize);
 }
