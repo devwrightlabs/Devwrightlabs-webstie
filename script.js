@@ -1,10 +1,16 @@
 const quickNav = document.getElementById("quickNav");
 
 if (quickNav) {
+  const allowedTargets = new Set(
+    Array.from(quickNav.options)
+      .map((option) => option.value)
+      .filter(Boolean),
+  );
+
   quickNav.addEventListener("change", (event) => {
     const target = event.target.value;
 
-    if (!target) {
+    if (!target || !allowedTargets.has(target)) {
       return;
     }
 
