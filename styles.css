@@ -1,0 +1,246 @@
+:root {
+  --green: #1dcf84;
+  --dark-green: #0a5b3c;
+  --white: #f6fff9;
+  --ink: #0a1f17;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  background: radial-gradient(circle at top, #113726 0, #07120d 55%, #030705 100%);
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(12px);
+  background: rgba(3, 7, 5, 0.82);
+  border-bottom: 1px solid rgba(29, 207, 132, 0.25);
+}
+
+.brand {
+  font-weight: 800;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.menu a,
+.footer a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.quick-nav {
+  font-size: 0.86rem;
+  opacity: 0.86;
+}
+
+#quickNav {
+  border: 1px solid rgba(29, 207, 132, 0.55);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  background: #082116;
+  color: var(--white);
+}
+
+.section {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 4.5rem 0;
+}
+
+.hero {
+  position: relative;
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+#networkCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: auto 12% 12% 12%;
+  height: 140px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  filter: blur(8px);
+}
+
+.hero-overlay::before,
+.hero-overlay::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  width: 150px;
+  height: 62px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 60% 40% 40% 60%;
+  filter: blur(3px);
+}
+
+.hero-overlay::before {
+  left: 36%;
+  transform: rotate(-16deg);
+}
+
+.hero-overlay::after {
+  right: 36%;
+  transform: rotate(16deg);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: min(760px, 90vw);
+  padding: 2rem;
+  background: rgba(4, 17, 11, 0.58);
+  border: 1px solid rgba(29, 207, 132, 0.3);
+  border-radius: 16px;
+}
+
+.eyebrow {
+  color: #89ffcb;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--green);
+  color: var(--white);
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.stats,
+.portfolio-grid,
+.testimonials {
+  display: grid;
+  gap: 1rem;
+}
+
+.stats {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.portfolio-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card,
+blockquote {
+  margin: 0;
+  padding: 1.1rem;
+  border: 1px solid rgba(29, 207, 132, 0.26);
+  border-radius: 12px;
+  background: rgba(7, 24, 16, 0.82);
+}
+
+.card a {
+  color: #85ffc9;
+}
+
+cite {
+  display: block;
+  margin-top: 0.65rem;
+  color: #abf6d6;
+  font-style: normal;
+}
+
+.footer {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid rgba(29, 207, 132, 0.2);
+  padding: 1.2rem 0 2rem;
+}
+
+.contact-page,
+.project-page {
+  min-height: 100vh;
+}
+
+.content-shell {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.media-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.media-grid img,
+.media-grid iframe,
+.media-grid video {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  min-height: 200px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 640px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid rgba(29, 207, 132, 0.4);
+  background: #092015;
+  color: var(--white);
+}
+
+@media (max-width: 880px) {
+  .top-nav {
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    width: 100%;
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+}
