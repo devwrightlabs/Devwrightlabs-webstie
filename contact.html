@@ -3,42 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact DevWright Labs</title>
+    <title>Contact · DevWright Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="contact-page">
-    <header class="top-nav">
-      <a class="brand" href="index.html#home">DevWright Labs</a>
-      <nav class="menu" aria-label="Primary Navigation">
+    <div class="bg-layer" aria-hidden="true">
+      <div class="bg-handshake"></div>
+      <div class="bg-veil"></div>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html#home">
+        <span class="brand-mark"></span>
+        <span class="brand-text">DevWright<span>Labs</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
         <a href="index.html#about">About</a>
-        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#portfolio">Work</a>
         <a href="index.html#testimonials">Testimonials</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
     <main class="content-shell">
-      <h1>Contact Us</h1>
-      <p>Have a project in mind? Share details and our team will respond quickly.</p>
-      <form class="form-grid" action="https://formsubmit.co/contact@devwrightlabs.com" method="post">
-        <label>
-          Name
-          <input type="text" name="name" required />
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          Company
-          <input type="text" name="company" />
-        </label>
-        <label>
-          Project Brief
-          <textarea name="message" rows="6" required></textarea>
-        </label>
-        <button class="btn" type="submit">Send Message</button>
+      <a class="breadcrumb" href="index.html#home">← Back to home</a>
+      <h1>Let's build something exceptional.</h1>
+      <p class="section-sub">
+        Whether you're launching a Pi Network app, scaling a cross-chain protocol, or modernizing a government
+        platform — share the details and we'll get back within one business day.
+      </p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="field field-wide">
+          <label for="company">Company / Agency</label>
+          <input id="company" name="company" type="text" autocomplete="organization" />
+        </div>
+        <div class="field field-wide">
+          <label for="message">Project Brief</label>
+          <textarea id="message" name="message" rows="7" required></textarea>
+        </div>
+        <div class="field field-wide form-actions">
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+        </div>
       </form>
     </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> DevWright Labs</p>
+      <nav aria-label="Footer">
+        <a href="index.html#about">About</a>
+        <a href="index.html#portfolio">Work</a>
+      </nav>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

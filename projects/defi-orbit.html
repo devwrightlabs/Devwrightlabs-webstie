@@ -3,26 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DeFi Orbit | DevWright Labs</title>
+    <title>DeFi Orbit · DevWright Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="project-page">
-    <header class="top-nav">
-      <a class="brand" href="../index.html#home">DevWright Labs</a>
-      <nav class="menu" aria-label="Primary Navigation">
-        <a href="../index.html#portfolio">Portfolio</a>
+    <div class="bg-layer" aria-hidden="true">
+      <div class="bg-handshake"></div>
+      <div class="bg-veil"></div>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html#home">
+        <span class="brand-mark"></span>
+        <span class="brand-text">DevWright<span>Labs</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#portfolio">Work</a>
+        <a href="../index.html#testimonials">Testimonials</a>
         <a href="../contact.html">Contact</a>
       </nav>
     </header>
+
     <main class="content-shell">
+      <a class="breadcrumb" href="../index.html#portfolio">← Back to portfolio</a>
+      <p class="kicker">DeFi</p>
       <h1>DeFi Orbit</h1>
-      <p>A 3D storytelling and onboarding environment designed for DeFi product education.</p>
-      <section class="media-grid">
-        <video controls preload="metadata">
-          <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
-        </video>
-        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80" alt="DeFi visualization" />
-      </section>
+      <p class="section-sub">A 3D liquidity navigator that turns complex pools, vaults, and yield strategies into an intuitive orbital map for institutional onboarding.</p>
+
+      <h2 style="margin-top:2.5rem;font-size:1.2rem;">Highlights</h2>
+      <ul>
+        <li>Three.js-driven exploration of live market data.</li>
+        <li>Risk-tier overlays and exposure simulation.</li>
+        <li>White-label theming for partner platforms.</li>
+      </ul>
+
+      <!-- =============================================================
+           MEDIA GALLERY — drop in real assets here.
+           Replace each .placeholder-media with <video> / <img> tags.
+           Example:
+             <video controls preload="metadata" poster="media/defi-orbit-poster.jpg">
+               <source src="media/defi-orbit-hero.mp4" type="video/mp4" />
+             </video>
+           ============================================================= -->
+      <h2 style="margin-top:2.5rem;font-size:1.2rem;">Gallery</h2>
+      <div class="media-grid">
+        <figure>
+          <div class="placeholder-media">Hero Video · drop defi-orbit-hero.mp4</div>
+          <figcaption>Project hero reel</figcaption>
+        </figure>
+        <figure>
+          <div class="placeholder-media">Image · drop defi-orbit-shot-01.jpg</div>
+          <figcaption>Product overview</figcaption>
+        </figure>
+        <figure>
+          <div class="placeholder-media">Image · drop defi-orbit-shot-02.jpg</div>
+          <figcaption>Workflow detail</figcaption>
+        </figure>
+        <figure>
+          <div class="placeholder-media">Image · drop defi-orbit-shot-03.jpg</div>
+          <figcaption>Outcome metrics</figcaption>
+        </figure>
+      </div>
+
+      <div class="hero-cta" style="margin-top:2.5rem;">
+        <a class="btn btn-primary" href="../contact.html">Discuss a similar project</a>
+        <a class="btn btn-ghost" href="../index.html#portfolio">More work</a>
+      </div>
     </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> DevWright Labs</p>
+      <nav aria-label="Footer">
+        <a href="../index.html#about">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </footer>
+
+    <script src="../script.js"></script>
   </body>
 </html>

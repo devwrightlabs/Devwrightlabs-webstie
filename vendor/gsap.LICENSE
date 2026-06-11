@@ -1,0 +1,15 @@
+GSAP 3.12.5
+Copyright 2008-2024, GreenSock. All rights reserved.
+
+GreenSock's standard "no charge" license:
+  https://gsap.com/standard-license
+
+Club GSAP members get additional rights:
+  https://gsap.com/licensing/
+
+Why GSAP does not employ an MIT-style license:
+  https://gsap.com/why-license/
+
+This site vendors gsap.min.js and ScrollTrigger.min.js for performance and
+Subresource Integrity. No source changes were made; the original /*! ... */
+license headers remain intact at the top of each minified file.
